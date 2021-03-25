@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.28502586, g: 0.37139237, b: 0.4960093, a: 1}
+  m_IndirectSpecularColor: {r: 0.2850269, g: 0.3713935, b: 0.49601045, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -259,7 +259,7 @@ GameObject:
   - component: {fileID: 609587765}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -357,6 +357,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b74e477a6d821cf8eaaf230cd826c02c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  paused: 0
+  pauseLast: 1
   PausePanel: {fileID: 756802495}
 --- !u!1 &622050881
 GameObject:
@@ -939,7 +941,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1135838937}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 609587765}
+        m_TargetAssemblyTypeName: gameController, Assembly-CSharp
+        m_MethodName: setPause
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1135838937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1672,6 +1686,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22212495954b76678a86f0804b00906b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseControl: {fileID: 609587765}
+  pauseLast: 1
   Head: {fileID: 1752815393}
   movementStats:
     power: 0
