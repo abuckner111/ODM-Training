@@ -357,8 +357,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b74e477a6d821cf8eaaf230cd826c02c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  paused: 0
-  pauseLast: 1
+  paused: 1
+  pauseLast: 0
   PausePanel: {fileID: 756802495}
 --- !u!1 &622050881
 GameObject:
@@ -1687,12 +1687,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseControl: {fileID: 609587765}
-  pauseLast: 1
+  pauseLast: 0
   Head: {fileID: 1752815393}
   movementStats:
     power: 0
     strength: 0
   lookSpeed: {x: 5, y: 5}
+  look: {x: 0, y: 0}
 --- !u!1 &1752815392
 GameObject:
   m_ObjectHideFlags: 0

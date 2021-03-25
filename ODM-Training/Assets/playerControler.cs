@@ -19,7 +19,7 @@ public class playerControler : MonoBehaviour
     public movementClass movementStats;
     public Vector2 lookSpeed;
 
-    private Vector2 look;
+    public Vector2 look;
 
 
 
@@ -47,10 +47,13 @@ public class playerControler : MonoBehaviour
         }
         if(pauseControl.paused == false)
         {
-            look.x -= Input.GetAxis("Mouse X");
-            look.y -= Input.GetAxis("Mouse Y");
-            transform.rotation = Quaternion.Euler(0,-look.x*lookSpeed.x,0);
-            Head.localRotation = Quaternion.Euler(look.y*lookSpeed.y,0,0);
+            look.x -= Input.GetAxis("Mouse X")*lookSpeed.x;
+            look.y -= Input.GetAxis("Mouse Y")*lookSpeed.y;
+
+            look.y = Mathf.Clamp(look.y, -90, 90);
+
+            transform.rotation = Quaternion.Euler(0,-look.x,0);
+            Head.localRotation = Quaternion.Euler(look.y,0,0);
         }
     }
 }
