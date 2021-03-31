@@ -15,12 +15,14 @@ public class gameController : MonoBehaviour
     public void OnPause()
     {
         PausePanel.SetActive(true);
+        Time.timeScale = 0f;
     }
 
 
     public void OnResume()
     {
         PausePanel.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     public GameObject PausePanel;

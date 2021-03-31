@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.2850269, g: 0.3713935, b: 0.49601045, a: 1}
+  m_IndirectSpecularColor: {r: 0.14426383, g: 0.18862794, b: 0.24705222, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1164,7 +1164,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1266279881}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 87c05b5979e52cf74a314465cec90a9a, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
@@ -1667,7 +1667,7 @@ Rigidbody:
   m_GameObject: {fileID: 1700712053}
   serializedVersion: 2
   m_Mass: 73
-  m_Drag: 0
+  m_Drag: 0.3
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -1687,12 +1687,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseControl: {fileID: 609587765}
+  rig: {fileID: 1700712055}
+  walkForce: 0
+  playerCollider: {fileID: 1266279883}
   pauseLast: 0
+  onGround: 1
   Head: {fileID: 1752815393}
   movementStats:
-    power: 0
-    strength: 0
-  lookSpeed: {x: 5, y: 5}
+    power: 1200
+    strength: 1000
+    jump: 4
+    height: 1.8
+    walk: {fileID: 13400000, guid: 87c05b5979e52cf74a314465cec90a9a, type: 2}
+    duck: {fileID: 13400000, guid: b0bafde75458b043fb2ccf33acea6cf6, type: 2}
+  lookSpeed: {x: 300, y: 300}
   look: {x: 0, y: 0}
 --- !u!1 &1752815392
 GameObject:
@@ -1704,7 +1712,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1752815393}
   m_Layer: 0
-  m_Name: Head
+  m_Name: Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
