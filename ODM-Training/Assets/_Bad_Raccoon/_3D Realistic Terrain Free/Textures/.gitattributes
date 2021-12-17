@@ -1,0 +1,2 @@
+Diffuse_8K_Flat_A.png filter=lfs diff=lfs merge=lfs -text
+Diffuse_8K_Flat_B.png filter=lfs diff=lfs merge=lfs -text

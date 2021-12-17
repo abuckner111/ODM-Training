@@ -4,54 +4,108 @@ using UnityEngine;
 
 public class gameController : MonoBehaviour
 {
-    public bool paused = false;
-    public bool pauseLast = true;
-
-    public void setPause(bool p)
-    {
-        paused = p;
-    }
-
-    public void OnPause()
-    {
-        PausePanel.SetActive(true);
-        Time.timeScale = 0f;
-    }
+    public pauseClass pauseControl;
+    public pauseMenuClass pauseMenu;
+    public bool fullscreen;
+    private bool _fullscreen;
+    public UnityEngine.UI.Toggle tog;
 
 
-    public void OnResume()
-    {
-        PausePanel.SetActive(false);
-        Time.timeScale = 1f;
-    }
-
-    public GameObject PausePanel;
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!paused && Input.GetButton("Cancel") == true)
+        if(_fullscreen != fullscreen)
         {
-            paused = true;
+            _fullscreen = fullscreen;
+            Screen.fullScreen = fullscreen;
+        }
+        if(Input.GetButtonDown("Pause") && pauseControl.paused == false)
+        {
+            pauseControl.pause();
+            pauseMenu.pause();
+        }
+    }
+
+    public void SetFullscreen()
+    {
+        fullscreen = tog.isOn;
+    }
+
+    public void ResumeButton()
+    {
+        pauseControl.resume();
+        pauseMenu.resume();
+    }
+
+    public void QuitButton()
+    {
+        Application.Quit();
+    }
+
+    [System.Serializable]
+    public class pauseMenuClass
+    {
+        public GameObject Panel;
+
+        public void pause()
+        {
+            this.Panel.SetActive(true);
         }
 
-
-        if(paused != pauseLast)
+        public void resume()
         {
-            if(paused)
+            this.Panel.SetActive(false);
+        }
+    }
+
+    [System.Serializable]
+    public class pauseClass
+    {
+        public bool     paused      = true;
+        public float    storedSpeed = 1f;
+
+        public void pause()
+        {
+            if(Time.timeScale != 0f)
             {
-                OnPause();
+                this.storedSpeed    = Time.timeScale;
+                Time.timeScale      = 0f;
+            }
+            this.paused = true;
+        }
+
+        public void resume()
+        {
+            if(this.storedSpeed != 0f)
+            {
+                Time.timeScale = this.storedSpeed;
             }
             else
             {
-                OnResume();
+                Time.timeScale = 1f;
             }
-            pauseLast = paused;
+            this.paused = false;
+        }
+
+        public void setPause(bool pauseState)
+        {
+            if(pauseState != this.paused)
+            {
+                this.paused = pauseState;
+                if(pauseState == true)
+                {
+                    this.pause();
+                }
+                else
+                {
+                    this.resume();
+                }
+            }
         }
     }
 }
