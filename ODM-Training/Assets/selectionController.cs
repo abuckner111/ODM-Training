@@ -13,6 +13,7 @@ public class selectionController : MonoBehaviour
     public Transform selection;
     public selector  select;
     public TMP_Text  actText;
+    public RectTransform Canvas;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +23,14 @@ public class selectionController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(selection != null)
+        if(Time.timeScale != 0f)
         {
 
+        if(selection != null)
+        {
+            Canvas.position = selection.TransformPoint(select.offset);
+            Canvas.LookAt((main.GetComponent(typeof(Transform)) as Transform).position);
+            Canvas.position += Canvas.forward*select.hover;
             select.selected = false;
             selection = null;
             select    = null;
@@ -55,7 +61,7 @@ public class selectionController : MonoBehaviour
             }
             if(select != null)
             {
-                actText.text = select.type+" (E)";
+                actText.text = select.type;
                 select.use = Input.GetButton("Use");
             }
             else
@@ -64,5 +70,6 @@ public class selectionController : MonoBehaviour
             }
 
         }
+    }
     }
 }

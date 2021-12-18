@@ -225,6 +225,7 @@ MonoBehaviour:
   use: 0
   range: 2
   type: Close
+  offset: {x: -0.59, y: 1.5, z: 0}
   highlight: {fileID: 2100000, guid: 1613487547cf6d1419d4bd05be605980, type: 2}
   ren: []
   mats: []
@@ -312,6 +313,7 @@ MonoBehaviour:
   use: 0
   range: 2
   type: Open
+  offset: {x: 0, y: 0, z: 0}
   highlight: {fileID: 2100000, guid: 1613487547cf6d1419d4bd05be605980, type: 2}
   ren: []
   mats: []

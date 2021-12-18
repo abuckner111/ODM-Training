@@ -722,6 +722,8 @@ MonoBehaviour:
   use: 0
   range: 2
   type: Close
+  offset: {x: -0.008, y: 0, z: -0.01}
+  hover: 0.5
   highlight: {fileID: 2100000, guid: 1613487547cf6d1419d4bd05be605980, type: 2}
   ren:
   - {fileID: 6441556906042001844}
@@ -2963,8 +2965,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 397118277}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.112, y: 0.938, z: -1.7}
+  m_LocalRotation: {x: -0, y: -0.99791, z: 0, w: -0.064619385}
+  m_LocalPosition: {x: 0.112, y: 0.938, z: 22.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2030757521}
@@ -2972,7 +2974,7 @@ Transform:
   - {fileID: 448582007}
   m_Father: {fileID: 0}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -187.41, z: 0}
 --- !u!114 &397118284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2990,6 +2992,7 @@ MonoBehaviour:
   selection: {fileID: 0}
   select: {fileID: 0}
   actText: {fileID: 1440908286}
+  Canvas: {fileID: 2068035942}
 --- !u!1 &401666760
 GameObject:
   m_ObjectHideFlags: 0
@@ -3722,6 +3725,8 @@ MonoBehaviour:
   use: 0
   range: 2
   type: Open
+  offset: {x: 0, y: 0, z: 0}
+  hover: 0.3
   highlight: {fileID: 2100000, guid: 1613487547cf6d1419d4bd05be605980, type: 2}
   ren:
   - {fileID: 7730496176290563419}
@@ -4286,6 +4291,8 @@ MonoBehaviour:
   use: 0
   range: 2
   type: Refill
+  offset: {x: 0, y: 0, z: 0}
+  hover: 0.7
   highlight: {fileID: 2100000, guid: 1613487547cf6d1419d4bd05be605980, type: 2}
   ren:
   - {fileID: 3593341511568948637}
@@ -4522,6 +4529,8 @@ MonoBehaviour:
   use: 0
   range: 2
   type: Gate
+  offset: {x: 0, y: 0, z: 0}
+  hover: 0.3
   highlight: {fileID: 2100000, guid: 1613487547cf6d1419d4bd05be605980, type: 2}
   ren:
   - {fileID: 703683952}
@@ -4874,6 +4883,8 @@ MonoBehaviour:
   use: 0
   range: 2
   type: Close
+  offset: {x: 0, y: 0, z: 0}
+  hover: 0.3
   highlight: {fileID: 2100000, guid: 1613487547cf6d1419d4bd05be605980, type: 2}
   ren:
   - {fileID: 4596288799522634842}
@@ -5604,6 +5615,8 @@ MonoBehaviour:
   use: 0
   range: 2
   type: Open
+  offset: {x: 0.013, y: 0, z: -0.01}
+  hover: 0.5
   highlight: {fileID: 2100000, guid: 1613487547cf6d1419d4bd05be605980, type: 2}
   ren:
   - {fileID: 5065736645806289777}
@@ -6451,6 +6464,8 @@ MonoBehaviour:
   use: 0
   range: 2
   type: Refill
+  offset: {x: 0, y: 0, z: 0}
+  hover: 0.3
   highlight: {fileID: 2100000, guid: 1613487547cf6d1419d4bd05be605980, type: 2}
   ren:
   - {fileID: 965770679}
@@ -10796,7 +10811,7 @@ RectTransform:
   m_GameObject: {fileID: 2068035938}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.004, y: 0.004, z: 0.004}
+  m_LocalScale: {x: -0.004, y: 0.004, z: 0.004}
   m_Children:
   - {fileID: 1440908285}
   m_Father: {fileID: 0}

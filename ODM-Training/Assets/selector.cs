@@ -10,6 +10,8 @@ public class selector : MonoBehaviour
 
     public float    range = 1f;
     public string   type;
+    public Vector3  offset;
+    public float    hover = 0.3f;
 
     public Material highlight;
 
